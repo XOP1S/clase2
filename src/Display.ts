@@ -2,7 +2,7 @@ class Display {
     private displayValorActual: HTMLElement;
     private displayValorAnterior: HTMLElement;
     private calculadora: Calculadora;
-    private tipoOperacion: any;
+    private tipoOperacion: string | undefined;
     private valorActual: string;
     private valorAnterior: string;
     private signos: { [key: string]: string };
@@ -11,7 +11,7 @@ class Display {
         this.displayValorActual = displayValorActual;
         this.displayValorAnterior = displayValorAnterior;
         this.calculadora = new Calculadora();
-        this.tipoOperacion = '';
+        this.tipoOperacion = undefined;
         this.valorActual = '';
         this.valorAnterior = '';
         this.signos = {
@@ -30,7 +30,7 @@ class Display {
     borrarTodo(): void {
         this.valorActual = '';
         this.valorAnterior = '';
-        this.tipoOperacion = '';
+        this.tipoOperacion = undefined;
         this.imprimirValores();
     }
 
